@@ -1,7 +1,11 @@
 import mongoose from "mongoose";
+import dotenv from 'dotenv'
+
+const url_string = process.env.URL_STRING;
+
 
 export function connectToMongoDB() {
   return mongoose.connect(
-    `mongodb+srv://webriteshkhadka:CGO8HX9gGHF9c6Hp@cluster0.fr1auxg.mongodb.net/movie_management_system?retryWrites=true&w=majority`
+    url_string
   );
 }
